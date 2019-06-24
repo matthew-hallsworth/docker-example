@@ -1,0 +1,32 @@
+version: '3.7'
+
+services:
+  nginx:
+    image: ig-engagement-systems:holodeck-nginx
+    build:
+      context: ./docker/dev/nginx
+    volumes:
+      - .:/var/www/html:rw,cached
+    ports:
+      - 80:80
+      - 443:443
+  fpm:
+    image: ig-engagement-systems:holodeck-fpm
+    build:
+      context: ./docker/dev/fpm
+    volumes:
+      - .:/var/www/html:rw,cached
+  mysql:
+    image: ig-engagement-systems:holodeck-mysql
+    build:
+      context: ./docker/dev/mysql
+    volumes:
+      - ./db:/var/lib/mysql
+    ports:
+      - 3306:3306
+  memcached:
+    image: ig-engagement-systems:holodeck-memcached
+    image: memcached:latest
+    ports:
+      - 11211:11211
+    command: ["-m", "1024m"]

@@ -1,0 +1,13 @@
+*
+
+!/app/
+!/atlas/
+!/docker/
+!/node_modules/
+!/src/
+!/var/
+!/vendor/
+!/web/
+!/webpack/
+!/composer.*
+!/yarn.lock
