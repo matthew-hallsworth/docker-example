@@ -42,9 +42,9 @@ You will need to ensure your docker / kubernetes integration is up and running t
 
 You're ready now to swarm deploy
 
-- Run: `docker stack deploy --compose-file docker-compose_dev.yml holodeck-stack`
+- Run: `docker stack deploy --compose-file docker-compose_dev.yml default-stack`
 - Eventually you should see that your stack is running
 - You can see the status of your stack by using `kubectl get services`
-- To switch off your stack run: `docker stack rm holodeck-stack`
+- To switch off your stack run: `docker stack rm default-stack`
 - Confirm stack is down by checking `kubectl get services` again
 
